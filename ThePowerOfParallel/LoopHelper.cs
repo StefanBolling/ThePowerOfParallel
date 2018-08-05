@@ -24,9 +24,7 @@ namespace ThePowerOfParallel
         {
             var startTime = DateTime.Now;
 
-            Parallel.For(0, numberOfIterations,
-                index => { Program.SlowOperation();
-                } );
+            Parallel.For(0, numberOfIterations, index => { Program.SlowOperation(); } );
 
             var totalRunTime = DateTime.Now - startTime;
 

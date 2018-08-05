@@ -8,7 +8,7 @@ namespace ThePowerOfParallel
         static void Main(string[] args)
         {
             var numberOfIterations = 10;
-            Console.WriteLine($"How much faster is parallel.for in {numberOfIterations} iterations");
+            Console.WriteLine($"How much faster is parallel in {numberOfIterations} iterations with for and foreach?");
             Console.WriteLine($"Normal for-loop run in {LoopHelper.NormalForLoop(numberOfIterations)} seconds");
             Console.WriteLine($"Parallel for-loop run in {LoopHelper.ParallelForLoop(numberOfIterations)} seconds");
             Console.WriteLine($"Normal foreach-loop run in {LoopHelper.NormalForEachLoop(numberOfIterations)} seconds");
