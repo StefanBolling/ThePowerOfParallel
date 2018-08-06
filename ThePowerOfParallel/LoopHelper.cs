@@ -12,7 +12,7 @@ namespace ThePowerOfParallel
             var startTime = DateTime.Now;
             for (var i = 0; i < numberOfIterations; i++)
             {
-                Program.SlowOperation();
+                Program.SlowOperation(i);
             }
 
             var totalRunTime = DateTime.Now - startTime;
@@ -24,7 +24,7 @@ namespace ThePowerOfParallel
         {
             var startTime = DateTime.Now;
 
-            Parallel.For(0, numberOfIterations, index => { Program.SlowOperation(); } );
+            Parallel.For(0, numberOfIterations, index => { Program.SlowOperation(index); } );
 
             var totalRunTime = DateTime.Now - startTime;
 
@@ -44,7 +44,7 @@ namespace ThePowerOfParallel
 
             foreach (var listObject in listOfObjects)
             {
-                Program.SlowOperation();
+                Program.SlowOperation(listObject);
             }
 
             var totalRunTime = DateTime.Now - startTime;
@@ -66,7 +66,7 @@ namespace ThePowerOfParallel
 
             Parallel.ForEach(listOfObjects, currentObject => 
             {
-                Program.SlowOperation();
+                Program.SlowOperation(currentObject);
             });
 
             var totalRunTime = DateTime.Now - startTime;

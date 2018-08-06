@@ -3,11 +3,11 @@ using System.Threading;
 
 namespace ThePowerOfParallel
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            const int numberOfIterations = 10;
+            const int numberOfIterations = 5;
             Console.WriteLine($"How much faster is parallel in {numberOfIterations} iterations with for and foreach?");
             Console.WriteLine($"Normal for-loop run in {LoopHelper.NormalForLoop(numberOfIterations)} seconds");
             Console.WriteLine($"Parallel for-loop run in {LoopHelper.ParallelForLoop(numberOfIterations)} seconds");
@@ -17,7 +17,7 @@ namespace ThePowerOfParallel
             Console.ReadKey();
         }
 
-        public static void SlowOperation()
+        public static void SlowOperation(object demoVariableForReadability)
         {
             Thread.Sleep(500);
         }
